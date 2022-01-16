@@ -1,7 +1,8 @@
 build_dir := build
 
-src_pattern := chapter4/pattern/main.c chapter4/get_line.c chapter4/str_index.c
+src_pattern := chapter4/pattern/main.c chapter4/get_line.c chapter4/pattern/str_index.c
 src_cal := chapter4/calculator/main.c chapter4/atof.c chapter4/get_line.c
+src_calc := chapter4/calc/main.c chapter4/calc/stack.c chapter4/calc/getop.c chapter4/calc/getch.c
 
 builddir :
 	mkdir -p ./$(build_dir)
@@ -41,3 +42,6 @@ pattern : $(src_pattern)
 
 calculator : $(src_cal)
 	gcc -o ./$(build_dir)/calculator $(src_cal)
+
+calc : $(src_calc)
+	gcc -o ./$(build_dir)/calc $(src_calc)
