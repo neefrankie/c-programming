@@ -1,5 +1,8 @@
 build_dir := build
 
+src_pattern := chapter4/pattern/main.c chapter4/get_line.c chapter4/str_index.c
+src_cal := chapter4/calculator/main.c chapter4/atof.c chapter4/get_line.c
+
 builddir :
 	mkdir -p ./$(build_dir)
 
@@ -32,3 +35,9 @@ pointeraddr : builddir
 
 swap : builddir
 	gcc -o ./$(build_dir)/swap ./chapter5/swap.c
+
+pattern : $(src_pattern)
+	gcc -o ./$(build_dir)/pattern $(src_pattern)
+
+calculator : $(src_cal)
+	gcc -o ./$(build_dir)/calculator $(src_cal)
